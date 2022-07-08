@@ -1,4 +1,5 @@
-FROM nvidia/cuda:11.6.1-cudnn8-devel-ubuntu18.04
+ARG BASE_IMAGE=nvidia/cuda:11.6.1-cudnn8-devel-ubuntu18.04
+FROM BASE_IMAGE
 
 ARG UID=1000
 ARG USER=developer
