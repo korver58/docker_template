@@ -1,6 +1,6 @@
 #!/bin/sh
 docker build \
     --network host \
-    --build-arg USER=$USER \
+    --build-arg USER=developer \
     -t template_image \
     -f Dockerfile . "$@"
