@@ -1,17 +1,16 @@
-version: '3'
-
 services:
   app:
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        - USER=developer
+        USER: ${USER:-developer}
+        USER_ID: ${UID:-1000}
+        GROUP_ID: ${GID:-1000}
     volumes:
-      - .:/home/developer/host_dir
+      - .:/home/host_dir
     environment:
       - DISPLAY=${DISPLAY}
-      - HOSTIP=${HOSTIP}
     network_mode: "host"
     tty: true
     stdin_open: true
